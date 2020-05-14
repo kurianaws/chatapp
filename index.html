@@ -1,0 +1,40 @@
+<html>
+	<head>
+			<meta charset="UTF-8"/> 
+		<title>
+			chat
+		</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	</head>
+	<body>
+		<div class="container" id="chat">
+			<div class="row">
+				<div class="col s6">
+					<h3>Messages</h3>
+					<ul v-for="msg in chatContent">
+						<li>
+							<div class="chip">
+							<i>{{msg.username}}</i>
+							{{msg.message}}
+							</div>
+						</li>
+
+				</ul>
+				</div>
+				<div class="col s6">
+					<div class="row">
+						<input type="text" class=" input-feild" v-model="newMsg"/>
+						<span>{{newMsg}}</span>
+
+					</div>
+					<div class="row">
+						<button class="btn orange" v-on:click="send">send message</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+	<script src="chat_script.js"></script>
+</html>
